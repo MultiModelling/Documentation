@@ -1,3 +1,9 @@
+===========================================
+INTRODUCTION TO MODEL DESCRIPTION TEMPLATE
+===========================================
+
+
+
 The model template was created to compare models under different categories. For this project, the focus is energy system models. The intention was to create a platform for model filtering when determining diverse energy system configuration analyses. The template provides a standard format for model description, including capabilities, important assumptions, data requirements, definitions, and scales. 
 The template is categorized into first level, second level, questions to ask, examples of questions, examples of answers, answers, and additional comments. The first category was further subdivided into general model information and model content. Within general information, further subcategories or the second level are basic information, model versions, type or token model, intended purpose, level of decision that the model aims to support, questions that the model can address, strengths, limitations, part usage of the model, model documentation, model accessibility, model type, model paradigms/formalisms, model implementation environment, and model license. 
 The model content targets the model structure. The further categories are energy system integration, scope, scale, granularity/resolution, model assumptions, model inputs, parameters, and output, data sources, verification, validation, and test, and uncertainty description. The last category is the reference section. 
