@@ -18,17 +18,16 @@ Scientific background
 ---------------------
 - Overview of the multi-model ecosystem idea 
 - Scientific state of the art in multi-modelling
-- Requirements for the multi-model infrastructure
-- Terminology :ref:`Terminology`
-- Model Description Template
-- Multi-modelling methods
-    - Scaling Methods
-    - Uncertainty propagation
-    - Combining models of different operational principles
-- Social process
 
 .. toctree::
    :maxdepth: 1
 
    Req/index
 
+- :ref:`Terminology`
+- Model Description Template
+- Multi-modelling methods
+    - Scaling Methods
+    - Uncertainty propagation
+    - Combining models of different operational principles
+- Social process
