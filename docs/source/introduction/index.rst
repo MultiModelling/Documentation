@@ -16,14 +16,16 @@ This document is intended to communicate the vision, methodology, and preliminar
 
 Scientific background
 ---------------------
-- Overview of the multi-model ecosystem idea 
-- Scientific state of the art in multi-modelling
+
 
 .. toctree::
    :maxdepth: 1
 
    Req/index
 
+
+- Overview of the multi-model ecosystem idea 
+- Scientific state of the art in multi-modelling
 - :ref:`Terminology`
 - Model Description Template
 - Multi-modelling methods
