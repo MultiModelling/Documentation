@@ -5,7 +5,7 @@
    overview/index 
    state_of_art/index
    req/index
-   model_description_template/index
+   model_description/index
    mm_methods/index
    social_process/index
    
