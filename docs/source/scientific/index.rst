@@ -1,5 +1,5 @@
 
-Scientific Background
+Scientific background
 ========================
 
 .. note::
