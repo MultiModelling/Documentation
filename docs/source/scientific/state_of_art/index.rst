@@ -487,8 +487,6 @@ authoritative governmental actors such as the United States
 Environmental Protection Agency.
 
 .. image:: images/img2.png
-   :width: 4.19146in
-   :height: 1.97625in
 
 Figure 2: Relations between the composability, interoperability, and
 reusability of a model.
@@ -533,8 +531,6 @@ competing characteristics within one multi-model triggers
 interoperability challenges.
 
 .. image:: images/img3.png
-   :width: 6.26031in
-   :height: 1.78969in
 
 Figure 3: Taxonomy of model characteristics (`Lynch &
 Diallo <#_bookmark51>`__, `2015 <#_bookmark51>`__), as adapted by the
@@ -587,8 +583,6 @@ transformed into static representations before being communicated to an
 optimisation model.
 
    .. image:: images/img4.png
-      :width: 6.07031in
-      :height: 2.23437in
 
 *Figure 4: The Levels of Conceptual Interoperability Model (*\ `Wang et
 al. <#_bookmark82>`__\ *,*\ `2009 <#_bookmark82>`__\ *)*
@@ -796,8 +790,6 @@ uncertainties should be analysed for both the whole multi-model as well
 as the individual sub-models or the whole multi-model only.
 
    .. image:: images/imag5.png
-      :width: 6.075in
-      :height: 2.28125in
 
 *Figure 5:* *Levels of uncertainty as structured by*\ `W. Walker,
 Lempert, and
