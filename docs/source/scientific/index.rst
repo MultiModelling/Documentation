@@ -13,7 +13,7 @@ Scientific background
    :caption: Contents:
 
    overview/index 
-   state_of_art/index
+   State of the art <state_of_art/index>
    req/index
    model_description/index
    mm_methods/index
