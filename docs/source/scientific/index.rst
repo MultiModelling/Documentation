@@ -1,6 +1,6 @@
 
-Scientific
-==============
+Scientific Background
+========================
 
 .. note::
     This documentation is work in progress and far from finished. New sections will be added in the near future.
