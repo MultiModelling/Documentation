@@ -19,7 +19,7 @@ Scientific background
 
 - Overview of the multi-model ecosystem idea 
 - Scientific state of the art in multi-modelling
-- :caption: Contents:
+- Terminology 
 - Model Description Template
 - Requirement for MMI
 - Multi-modelling methods
