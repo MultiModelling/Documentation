@@ -581,7 +581,7 @@ dynamic simulation model may produce time-series outputs that must be
 transformed into static representations before being communicated to an
 optimisation model.
 
-   .. image:: images/imag.jpg
+   .. image:: images/img4.jpg
       :width: 6.07031in
       :height: 2.23437in
 
@@ -790,9 +790,7 @@ the models or directed with no feedbacks) impacts whether the
 uncertainties should be analysed for both the whole multi-model as well
 as the individual sub-models or the whole multi-model only.
 
-   .. image:: media/image5.jpg
-      :alt: A diagram of a level of uncertainty Description
-      automatically generated
+   .. image:: images/imag5.jpg
       :width: 6.075in
       :height: 2.28125in
 
