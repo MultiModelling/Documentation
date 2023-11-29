@@ -1,9 +1,6 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: State of the art 
-
-
 
 
 =============================================
