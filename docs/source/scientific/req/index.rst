@@ -45,7 +45,7 @@ document.
   
  `3. Model connection and multi-model set-up`_
   
- `4. Model connection and multi-model set-up`_
+ `4. Model interoperation`_
   
  `5. Model experimentation and output`_
 
@@ -211,11 +211,10 @@ multi-model
 +------+----------------------+-----------------+---------------------+
 
 
-4. Model connection and multi-model set-up
+4. Model interoperation
 =======================================
 
-This category addresses how to connect individual models and to set up a
-multi-model
+This category addresses what is needed for model interoperation (i.e. interaction) after a multi-model is set up 
 
 +------+-----------------------+--------------+-----------------------+
 |      | Features              | Priority     | Comments related to   |
