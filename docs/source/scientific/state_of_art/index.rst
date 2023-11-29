@@ -1,14 +1,13 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: State of the art
 
 
 =============================================
 State of the art in multi-modelling 
 =============================================
 
-**A Literature Review of Multi-modelling in Sustainability Transition**
+*A Literature Review of Multi-modelling in Sustainability Transition*
 
 
 29 November 2023
