@@ -17,17 +17,11 @@ This document is intended to communicate the vision, methodology, and preliminar
 Scientific background
 ---------------------
 
-
-.. toctree::
-   :maxdepth: 1
-
-   Req/index
-
-
 - Overview of the multi-model ecosystem idea 
 - Scientific state of the art in multi-modelling
-- :ref:`Terminology`
+- :caption: Contents:
 - Model Description Template
+- Requirement for MMI
 - Multi-modelling methods
     - Scaling Methods
     - Uncertainty propagation
