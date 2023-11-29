@@ -2,11 +2,11 @@
    :maxdepth: 2
    :caption: Contents:
 
-   Overview/index 
-   State_of_art/index
-   Req/index
-   Model_description_template/index
-   MM_methods/index
-   Social_process/index
+   overview/index 
+   state_of_art/index
+   req/index
+   model_description_template/index
+   mm_methods/index
+   social_process/index
    
 
