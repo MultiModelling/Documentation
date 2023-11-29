@@ -11,10 +11,10 @@ Welcome to the Multimodelling documentation
    :caption: Contents:
 
    introduction/index
+   scientific/index
    enduser/index
    energy_models/index
    example_use_cases/index
-   Model_description_template/index
    technical/index
    installation/index
    terminology/index
