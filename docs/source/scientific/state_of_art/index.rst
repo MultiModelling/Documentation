@@ -789,7 +789,7 @@ the models or directed with no feedbacks) impacts whether the
 uncertainties should be analysed for both the whole multi-model as well
 as the individual sub-models or the whole multi-model only.
 
-   .. image:: images/imag5.png
+   .. image:: images/img5.png
 
 *Figure 5:* *Levels of uncertainty as structured by*\ `W. Walker,
 Lempert, and
