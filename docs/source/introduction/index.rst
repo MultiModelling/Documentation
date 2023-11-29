@@ -13,17 +13,3 @@ This MMI is being collaboratively designed and developed by a diverse and extens
 
 This document is intended to communicate the vision, methodology, and preliminary results of our ongoing initiative, with the intention of fostering increased interest, research, and discourse on the subject of multi-modelling (referred to as MMing). Our aim is to cultivate a more robust and inclusive interdisciplinary community of multi-modellers (referred to as MMers), encompassing researchers and practitioners alike.
 
-
-Scientific background
----------------------
-
-- Overview of the multi-model ecosystem idea 
-- Scientific state of the art in multi-modelling
-- Terminology 
-- Model Description Template
-- Requirement for MMI
-- Multi-modelling methods
-    - Scaling Methods
-    - Uncertainty propagation
-    - Combining models of different operational principles
-- Social process
