@@ -1,4 +1,5 @@
 Technical documentation
+============================
 
 .. toctree::
    :maxdepth: 1
