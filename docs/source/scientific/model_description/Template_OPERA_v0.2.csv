@@ -1,0 +1,81 @@
+Categorization;;;;;Answers by model owners;
+1st level;2nd level;Questions to ask;Explanation of the question;Examples of answers;Answers/Explanation;Additional comments/Remarks
+interview date;;;;;;
+Participant(s);;;;;;
+General model information;Basic information;Model name;;;OPERA (Options Portfolio for Emission Reduction Assessment);
+;;Model owner;;;TNO-ETS;
+;;Model Developer;;;TNO-ETS;
+;Model version;Latest model version / date;;;;
+;;Model version used in this project;;;2022_3;
+;Point of contact for questions;Organization;;;TNO-ETS;
+;;Individual;;;Joost van Stralen;
+;Type model or token model;Whether the model is a token model? If so, give illustration.;These models capture elements or individual properties of the system as opposed to universal property;;Yes. For example, the model analyses techno-economical aspect of the energy system. ;
+;;Whether the model is a type model? If so, give illustration.;These models capture universal property of the system, rather than emphasizing on a particular property;;Yes. For example, the model reflects universal characteristics of network infrastructure, i.e. energy flows. ;
+;Intended purpose;Briefly describe the intended purpose of the model;;;Total system cost minimization at the national level (the Netherlands);
+;Level of decision that the model aims to support;"Strategic - long-term planning; what do we want?";;;"- long-term national and regional policy targets related to emissions reductions, efficiency, renewable energy production
+- long-term targets of, for example, production for industries, including subsectors, sectoral demands, energy infrastructure capacity, if any";
+;;"Tactical - medium-term; how do we approach this?";;;"- not much emphasis in the medium-term, except in the dynamic run mode of the model
+- model structure allows for inclusion of medium-term policies. Most of them are included are already present, though. 
+- certain input parameters are adjusted based on upcoming policies, for example, energy labels of offices";
+;;"Operational - short-term; regular/day-to-day operations?";;;demand-supply energy balances, energy flows to address mismatches, short-term flexibility options;
+;Questions to address;What are typical types of questions that can be asked to the model? provide examples of such questions;The questions may relate to categories such as technologies, techno-economics, society, environment (also, emission related), and policies.;;"what are the capacity and energy supply from different renewable sources? 
+What the energy flows between regions and whether network is constrained to achieve that? etc. ";
+;Strengths;What are the strengths of this model? What is unique?;;;"1) Structure can be readily applied to other countries, particularly in Europe
+2) System integration - ideal tool for assessing the implementation of the energy transition and the establishment of a low-carbon economy
+3) Linkage to NEOMS model - this model is used for compiling the Dutch national energy outlook";"1) The model analyzes greenhouse gases (GHG), non-energy-related emissions, and air pollutants. 
+2) The capacity limits (of atleast important technology options or processes) are set by expert consultation."
+;Limitations;What the important limitations of the model? ;;;"1) perfect foresight assumption
+2) Social interaction and impacts missing";
+;Past usage of the model;Cases/examples where the model was used for its intended purpose;;;"1) Used for formulating strategic policy advice on energy decarbonization and climate change mitigation for the Dutch government
+2) Performed exploratory studies on the role of specific low-carbon energy technologies in the energy transition of the Netherlands";
+;;"Cases/examples where the model was not used for its intended purpose; are there any examples of model abuse or misuse?";;;;
+;Model documentation;whether model documentation is complete? ;;;Content documentation is there in the form of journal paper (see reference below). No public documentation on the details of the model (for example, GUI, API, etc.). In addition, not every update is documented. ;
+;;whether documentation is accessible? if so, how?;;;Journal paper is open source. ;
+;;whether documentation is in English?;;;Yes;
+;Model acessibility ;does the model have a Graphical User interface (GUI) ? If so, how to access it?;;;Yes, the GUI can be accessed along with the whole model with permission from the model owner. ;
+;;does the model have an Application Programming Interface (API) ?  If so, how to access it? ;;;In general, the model does not have an API.;
+;Model type ;Is the model static or dymanic?;;;Static;OPERA can consider 5/10 years time steps, projecting till 2050, i.e. years are optimized individually. Previous years data are not automatically fed to future years. Dynamic modeling is in progress and will not be a part of this project. 
+;;Is the model continuous or discrete?;;;continuous;
+;;is the model stochastic or deterministic? ;;;Deterministic;
+;;Is it an optimization model? If so, what type of algorithms does it use? ;;linear programing (LP), mixed integer (linear) programing (MIP), non-linear programing (NLP), or a combination of some of these;Yes, LP;Due to structure being linear, discrete values (say, integers) are not considered. Though, limits (lower and upper) can be set as discrete values. 
+;Modelling paradigms/formalisms;what modelling paradigm or formalism does the model use? ;;discrete-event, systems dynamics, agent-based, regression, network model, math equations, etc. ;Mathematical equations, logical expressions, energy balances, math equations, etc.;
+;Model implementation environment;Is it implemented in a General purpose programming language? ;;Python, JAVA, C++, etc. ;;
+;;Does it use a modeling/Simulation environment/package?;;"e.g. off-the-shelf packages such as AIMMS, GAMS, MATLAB; or modeling packages such as Mesa, PyDevs";AIMMS ;
+;;Is it implemeted in spreadsheet? ;;e.g. excel, google sheet;;
+;Model license;Is any license required for running the model? ;;;AIMMS license is needed, except for educational and research purposes;
+Model content;Energy System integration;Does the model represent an integrated energy system? ;;;Yes;
+;Scope;What important elements and concepts are included in the model?;Here discussion will be about content scope. For example, what type of energy carriers are described? Or, energy-demanding sectors, supply options, and infrastructure;e.g. heat, electricity, NG, hydrogen, etc. - for energy carriers;"1) covers the entire energy system and all greenhouse gas emissions of the Netherlands
+2) Content-wise coverage: Energy-demanding sectors (built environment, industries, agriculture, and mobility), energy supply options (for example, wind, solar, biomass, geothermal, and non-renewable sources), and energy infrastructure (electricity, heat, gas, hydrogen, and CO2)";
+;;What elements and concepts are currently not included in the model, but in your opinion those shall be included? ;This can be a sectors within energy-demanding sectors or energy supplying options or flexibility options, etc..;;;
+;;Specific attention to flexibility options: What type of flexibility options are included in the model? ;This can include technology options related to, for example, seasonal storage, demand response, etc...;;Few examples of flexibility options are salt caverns (space specific), batteries, hydrogen storage, and a significant range of conversion techniques;Storage in general have zero costs. Only electricity and hydrogen have storage costs
+;Scale;What spatial (or geospatial) scale does the model have?;;e.g. neighbourhood, district, town/city, province, country, continent, global;National;
+;;What temporal (or time) scale does the model have? ;;e.g. annual, multiple years;Annual;
+;;Other;;;;
+;Granularity / resolution ;Spatial ;This can be further classified into structural or information granularity. Structural granularity represents level of disaggregation between model elements and the relationships between them. Information granularity representss information content of the model elements and output;e.g. individual buildings, neighbourhood, district, town/city, province, country;town/city;This has been done only for Groningen Province. The structure allows to perform similar analyses in other regions within the Netherlands
+;;Temporal;;e.g. seconds, minutes, hours, annual, time slices within a year, time slices over a time period;Time slices;
+;;Other ;;;;
+;Model assumptions;What important assumptions does the model have?  ;;;;
+;;Which ones are likely to be contested by others? Why?;;;;
+;Model input, parameters and output;What is/are the model input format(s)? ;;;MS Access;There is preprocessing of inputs within OPERA, so that to reduce the number of activities (solving variables) that goes into the optimization process
+;;What is/are the model output format(s)? ;;;MS Excel;There is postprocessing of outputs both in OPERA and in excel
+;;What are the important model input? ;;;Technology inputs (supply options), costs (annualized investments, fixed, variable, and opeation and maintenance costs), industrial processes, emissions from industries and other activities, future targets (for example, renewable energy production, emission reduction, and efficiency improvement);
+;;What important parameters does the model have? ;;;technology- and process-related parameters (such as, efficiency), demand and supply profiles, limits and ranges on output, demand service units (for example, MT_steel);
+;;What are the important model output? ;;;primary energy supply, secondary energy demand-supply balances, energy flows, system costs;
+;Data sources;What are the data sources used by the model? ;;;mostly open sources, such as CBS, linked to other models for certain inputs, etc.;
+;;Any data that can be shared? If so, what and how to access them?;;;Databases (MS access format) can be accessed with permission from model owners. Databases contain most input-related data. Remaining data can be accessed by acceesing the model with the permission from the model owners;
+;Verification, validation and test;Can you comment on the test coverage of the model? ;;;There is not much formal testing possibility within the modeling framework. Input parameters can be tested by sensitivity analyses, for example. Modeling outputs/results are validated by non-optimality or model not converging condition. ;
+;;What are being verified, validated or tested in the model, if any?;test could be on structure, behaviour, policy implications, etc. .;e.g., direct structure tests, parameter confirmation, extreme conditions, structural boundary adequacy, unit checks, sensitivity tests, reproduction/prediction tests, etc..;Verification, validation, and testing can be on boundary conditions, inputs, limits/ranges, etc. ;
+;;What methods are used for model verification, validation and testing, if any? ;What type of method are employed? It could be qualitative, quantitative, etc..;e.g. expert opinion, contemporary literature review, run the same model under different scenarios, etc. ;"Qualitative method: stakeholder and expert opinions and perspectives, literature and government reports, etc.
+Quantitative method: comparison with other contemporary national models, scenario comparisons, etc.
+etc..";Indirect methods for verifications and validations
+;Uncertainty descriptions;Can you comment on the uncertainty in model parameters? ;Are there any inbuilt tools, such as monte carlo, or way to perform sensitivity analyses on model inputs? ;;Important model parameters within the model operate within ranges, depending upon scenarios, to handle uncertainty;
+;;Can you comment on the uncertainty in model input? ;;;Input is more uncertain for long-term scenarios compared to mid-term;
+;;Can you comment on the uncertainty in model structure? ;;;;
+;;Any other comments? ;;;;
+;;Anything missing? ;;;;
+;References;Model description;;;https://doi.org/10.1007/s10666-020-09741-7;
+;;model application;;;https://doi.org/10.1016/j.apenergy.2021.118035;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
