@@ -31,6 +31,7 @@ author = 'Edwin Matthijssen, Ewoud Werkman'
 extensions = [
     "sphinx_rtd_theme",
     "sphinx.ext.autosectionlabel",
+    "linuxdoc.rstFlatTable",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
