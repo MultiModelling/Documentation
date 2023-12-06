@@ -139,7 +139,7 @@ optimization can be performed in a singular iteration.
 A link to Menghua Prisse’s master thesis work follows:
 https://repository.tudelft.nl/islandora/object/uuid:53acc329-7990-4fe0-8374-3418d10c3f85
 
-#. Bibliography
+ Bibliography
 
 Bollinger, L. A., C. B. Davis, R. Evins, E. J. L. Chappin, and I.
 Nikolic. 2017. “Multi-Model Ecologies for Shaping Future Energy Systems:
@@ -156,12 +156,11 @@ Duboz, Raphaël, Éric Ramat, Philippe Preux, Raphae¨l Raphae¨, Raphae¨l
 Duboz, and Ric Ramat. 2003. “Scale Transfer Modeling: Using Emergent
 Computation for Coupling an Ordinary Differential Equation System with a
 Reactive Agent Model.” *Systems Analysis Modelling Simulation*
-43(6):793–814. doi: 10.1080/0232929031000150355.
+43(6):793–814. https://doi.org/10.1080/0232929031000150355.
 
 Figueira, Gonçalo, and Bernardo Almada-Lobo. 2014. “Hybrid
 Simulation-Optimization Methods: A Taxonomy and Discussion.” *Simulation
-Modelling Practice and Theory* 46:118–34. doi:
-10.1016/j.simpat.2014.03.007.
+Modelling Practice and Theory* 46:118–34. https://doi.org/10.1016/j.simpat.2014.03.007.
 
 Hellhake, Dominik, Justus Bogner, Tobias Schmid, and Stefan Wagner.
 2022. “Towards Using Coupling Measures to Guide Black-Box Integration
@@ -171,22 +170,21 @@ Reliability* 32(4). doi: 10.1002/STVR.1811.
 Nikolic, I., Martijn Warnier, J. H. Kwakkel, E. J. L. Chappin, Z.
 Lukszo, F. M. Brazier, A. Verbraeck, M. Cvetkovic, and P. Palensky.
 2019. “Principles, Challenges and Guidelines for a Multi-Model Ecology.”
-*Citation*. doi: 10.4233/UUID:1AA3D16C-2ACD-40CE-B6B8-0712FD947840.
+*Citation*. https://doi.org/10.4233/UUID:1AA3D16C-2ACD-40CE-B6B8-0712FD947840.
 
 Quesnel, Gauthier, Raphaël Duboz, and Éric Ramat. 2008. “The Virtual
 Laboratory Environment – An Operational Framework for Multi-Modelling,
 Simulation and Analysis of Complex Dynamical Systems.” *Simulation
-Modelling Practice and Theory* 17:641–53. doi:
-10.1016/j.simpat.2008.11.003.
+Modelling Practice and Theory* 17:641–53. https://doi.org/10.1016/j.simpat.2008.11.003.
 
 Rezaeiahari, Mandana, and Mohammad T. Khasawneh. 2020. “Simulation
 Optimization Approach for Patient Scheduling at Destination Medical
-Centers.” *Expert Systems With Applications* 140:112881. doi:
-10.1016/j.eswa.2019.112881.
+Centers.” *Expert Systems With Applications* 140:112881. https://doi.org/10.1016/j.eswa.2019.112881.
 
 Shahumyan, Harutyun, and Rolf Moeckel. 2015. “Integrating Models for
 Complex Planning Policy Analysis: Challenges and a Solution in Coupling
-Dissimilar Models.” Computers in Urban Planning and Urban Management.
+Dissimilar Models.” Computers in Urban Planning and Urban Management. 
+http://web.mit.edu/cron/project/CUPUM2015/proceedings/Content/modeling/208_shahumyan_h.pdf
 
 van der Veer, Hans, and Anthony Wiles. 2008. *Achieving Technical
 Interoperability-the ETSI Approach*.
