@@ -196,7 +196,7 @@ Principles, challenges and guidelines for a multi-model ecology.
 *Citation*.
 https://doi.org/10.4233/UUID:1AA3D16C-2ACD-40CE-B6B8-0712FD947840
 
-Quintel. (n.d.). *Energy Transition Model*. Retrieved December 10, 2019,
+..Quintel. (n.d.). *Energy Transition Model*. Retrieved December 10, 2019,
 from https://energytransitionmodel.com/?locale=en
 
 Rabelo, L., Kim, K., Park, T. W., Pastrana, J., Marin, M., Lee, G.,
