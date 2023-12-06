@@ -75,7 +75,7 @@ minimal effect on the variance of the output), variance cutting (VC –
 bring the output uncertainty below a determined threshold by fixing the
 lowest amount of input values as possible), and factor mapping (FM –
 determines which region of the output space is associated with which
-part in the input space) (`Saltelli, A., Ratto, M., Andres, T.et al., 2007`_). 
+part in the input space) (`Saltelli, A., Ratto, M., Andres, T. et al., 2007`_). 
 Other sensitivity analysis methods identified in this
 study are Morris, RBD-FAST, PAWN, Random Decision Forests, and Patient
 Rule Induction Method.
