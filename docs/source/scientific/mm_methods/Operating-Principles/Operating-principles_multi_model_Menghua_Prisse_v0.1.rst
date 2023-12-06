@@ -118,9 +118,9 @@ Conclusion and future work
 
 The iterative process of conceptualizing the ABM and the multi-model
 resulted in a very fit ABM. When coupling models, high cohesion and low
-coupling are desired (Hellhake et al. 2022), which this combination did.
-Overfitting of coupled models should be avoided (Shahumyan and Moeckel
-2015). Instead, a generic ABM should be created and connected via a
+coupling are desired (`Hellhake et al. 2022`_), which this combination did.
+Overfitting of coupled models should be avoided (`Shahumyan and Moeckel
+2015`_). Instead, a generic ABM should be created and connected via a
 wrapper or an adapter. This study highlights the need for more focus on
 the broader organizational, practical context within which the models
 operate, particularly related to different operating principles. The
@@ -143,11 +143,11 @@ https://repository.tudelft.nl/islandora/object/uuid:53acc329-7990-4fe0-8374-3418
 
 Bollinger, L. A., C. B. Davis, R. Evins, E. J. L. Chappin, and I.
 Nikolic. 2017. “Multi-Model Ecologies for Shaping Future Energy Systems:
-Design Patterns and Development Paths.” doi: 10.1016/j.rser.2017.10.047.
+Design Patterns and Development Paths.” https://doi.org/10.1016/j.rser.2017.10.047.
 
 Brandmeyer, Jo Ellen, and Hassan A. Karimi. 2000. “Coupling
 Methodologies for Environmental Models.” *Environmental Modelling &
-Software* 15(5):479–88. doi: 10.1016/S1364-8152(00)00027-X.
+Software* 15(5):479–88. https://doi.org/10.1016/S1364-8152(00)00027-X.
 
 van Dam, Koen H., Igor Nikolic, and Zofia Lukszo. n.d. *Agent-Based
 Modelling of Socio-Technical Systems*.
