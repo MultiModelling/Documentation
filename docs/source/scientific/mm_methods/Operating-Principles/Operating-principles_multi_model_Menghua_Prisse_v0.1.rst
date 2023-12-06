@@ -12,7 +12,7 @@ Introduction
 ============
 
 Multi-models better handle complex issues than singular models due to
-the combination of the strength of individual models (`Explicit targets`_`Duboz et al. 2003`_;
+the combination of the strength of individual models (:ref:`Explicit targets`,`Duboz et al. 2003`_;
 Quesnel, Duboz, and Ramat 2008). However, combining models is
 challenging on both technical and non-technical levels. Technical
 challenges involve differences in the system design and alignment of
