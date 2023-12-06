@@ -139,6 +139,7 @@ optimization can be performed in a singular iteration.
 A link to Menghua Prisse’s master thesis work follows:
 https://repository.tudelft.nl/islandora/object/uuid:53acc329-7990-4fe0-8374-3418d10c3f85
 
+
  Bibliography
 
 Bollinger, L. A., C. B. Davis, R. Evins, E. J. L. Chappin, and I.
