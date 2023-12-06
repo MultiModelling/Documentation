@@ -150,7 +150,7 @@ Methodologies for Environmental Models.” *Environmental Modelling &
 Software* 15(5):479–88. https://doi.org/10.1016/S1364-8152(00)00027-X.
 
 van Dam, Koen H., Igor Nikolic, and Zofia Lukszo. n.d. *Agent-Based
-Modelling of Socio-Technical Systems*.
+Modelling of Socio-Technical Systems*. https://link.springer.com/book/10.1007/978-94-007-4933-7. 
 
 Duboz, Raphaël, Éric Ramat, Philippe Preux, Raphae¨l Raphae¨, Raphae¨l
 Duboz, and Ric Ramat. 2003. “Scale Transfer Modeling: Using Emergent
@@ -165,7 +165,7 @@ Modelling Practice and Theory* 46:118–34. https://doi.org/10.1016/j.simpat.201
 Hellhake, Dominik, Justus Bogner, Tobias Schmid, and Stefan Wagner.
 2022. “Towards Using Coupling Measures to Guide Black-Box Integration
 Testing in Component-Based Systems.” *Software Testing Verification and
-Reliability* 32(4). doi: 10.1002/STVR.1811.
+Reliability* 32(4). https://doi.org/10.1002/STVR.1811.
 
 Nikolic, I., Martijn Warnier, J. H. Kwakkel, E. J. L. Chappin, Z.
 Lukszo, F. M. Brazier, A. Verbraeck, M. Cvetkovic, and P. Palensky.
