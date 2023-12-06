@@ -9,7 +9,7 @@ workbench. It is proof of concept that such a tool can assist in
 uncertainty analyses on multi-models. Figure 1 shows the structure of
 the uncertainty analysis tool.
 
-.. image:: vertopal_e4fa591e4e334939988875bb4eb7e99e/media/image1.png
+.. image:: images/image1.png
    :width: 6.43125in
    :height: 2.1875in
 
@@ -33,7 +33,7 @@ model function that generates output data. This resulted in the
 following pair plot that shows the variations of input and output in
 relation to the different scenario runs.
 
-.. image:: vertopal_e4fa591e4e334939988875bb4eb7e99e/media/image2.png
+.. image:: images/image2.png
    :width: 5.65625in
    :height: 5.95486in
 
