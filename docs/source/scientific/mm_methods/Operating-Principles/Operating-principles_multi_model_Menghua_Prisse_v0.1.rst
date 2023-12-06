@@ -13,7 +13,7 @@ Introduction
 
 Multi-models better handle complex issues than singular models due to
 the combination of the strength of individual models (`Duboz et al. 2003`_;
-Quesnel, Duboz, and Ramat 2008). However, combining models is
+`Quesnel, Duboz, and Ramat 2008`_). However, combining models is
 challenging on both technical and non-technical levels. Technical
 challenges involve differences in the system design and alignment of
 each model. Alignment involves several topics, the most common being
@@ -29,8 +29,8 @@ structures exist for coupling optimization and simulation models and how
 the choices might affect the workings of the multi-model. Accordingly,
 the overall research question was formulated as follows:
 
-What is the effect of coupling an agent-based model to an existing
-optimization model?
+*What is the effect of coupling an agent-based model to an existing
+optimization model?*
 
 This thesis was conducted within the boundaries of the micro case of the
 multi-modeling project. The case study area was the industrial area of
@@ -40,18 +40,18 @@ optimization and an agent-based model (ABM).
 State-of-the-art
 ================
 
-An ABM can be constructed by following a ten-step method (van Dam,
-Nikolic, and Lukszo n.d.). One of the main issues associated with
-coupling is interoperability (Bollinger et al. 2017; Nikolic et al.
-2019; Rezaeiahari and Khasawneh 2020). Coupling tightness refers to the
+An ABM can be constructed by following a ten-step method (`van Dam,
+Nikolic, and Lukszo n.d.`_). One of the main issues associated with
+coupling is interoperability (`Bollinger et al. 2017`_; `Nikolic et al.
+2019`_; `Rezaeiahari and Khasawneh 2020`_). Coupling tightness refers to the
 fundamental concept of interdependence between models, how they are
 connected, and their variables intertwined. Five different levels of
 coupling tightness have been identified based on coupling methodologies
-(Brandmeyer and Karimi 2000). Four levels of interoperability have been
-determined: technical, syntactical, semantic, and organizational (van
-der Veer and Wiles 2008). Four model configurations for coupling a
-simulation and optimization model have been provided (Figueira and
-Almada-Lobo 2014).
+(`Brandmeyer and Karimi 2000`_). Four levels of interoperability have been
+determined: technical, syntactical, semantic, and organizational (`van
+der Veer and Wiles 2008`_). Four model configurations for coupling a
+simulation and optimization model have been provided (`Figueira and
+Almada-Lobo 2014`_).
 
 Methods, results, and findings
 ==============================
