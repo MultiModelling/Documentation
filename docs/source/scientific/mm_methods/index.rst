@@ -1,5 +1,5 @@
 ============================
-Multi-modelling methods
+Multi-modeling methods
 ============================
 
 
