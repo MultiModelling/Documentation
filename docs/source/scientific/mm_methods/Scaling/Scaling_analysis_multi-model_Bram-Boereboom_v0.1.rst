@@ -1,9 +1,7 @@
 =======================================================
-Scaling Analysis – Resolution difference-based coupling
+Resolution difference-based coupling
 =======================================================
---------------------------------------
-Master thesis summary - Bram Boereboom
---------------------------------------
+
 
 
 20 November 2023
