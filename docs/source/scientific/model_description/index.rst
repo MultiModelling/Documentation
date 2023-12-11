@@ -16,4 +16,4 @@ Examples of questions include whether the model is a token or type model. The ex
    :caption: Contents:
 
    test_1
-   vertopal.com_General_Information
+   General_Information
