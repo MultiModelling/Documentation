@@ -42,7 +42,7 @@ owners if needed. The examples of answers section was created to
 facilitate model owners in answering some questions. The explanation of
 the question and the example of answers sections provided clarity to
 model owners in answering questions. Some question explanations are
-based on the :ref:`Terminology\` document. This allowed for clarity
+based on the :ref:`Terminology` document. This allowed for clarity
 among model owners regarding interpreting different meanings of the same
 terms. The answers section provides answers from the model owners
 regarding the questions asked. Some of the answers could be further
