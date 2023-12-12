@@ -7,9 +7,13 @@ Optimization and Simulation model coupling
 Master thesis summary – Menghua Prisse
 
 This work has been further categorized into the following: 
+
 - `Introduction`_
+
 - `State-of-the-art`_
+
 - `Methods, results, and findings`_
+
 - `Conclusion and future work`_
 
 
