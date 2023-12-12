@@ -2,7 +2,7 @@
 Introduction
 =============
 
-**Somadutta Sahoo, Last update: 11\ :sup:`th` November 2023**
+**Somadutta Sahoo, Last update: 11 November 2023**
 
 
 
