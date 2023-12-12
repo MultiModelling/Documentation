@@ -3,7 +3,7 @@ Model description template
 ============================
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 4
    :caption: Contents:
 
    Introduction_Model-Description
