@@ -1,12 +1,12 @@
-==================================================================================
-Uncertainty Analysis – Exploratory modeling and analysis (EMA) tool-based coupling
-==================================================================================
----------------------------------------
-Master thesis summary – Alexander Drent
----------------------------------------
-
+======================================================
+Exploratory modeling and analysis tool-based coupling
+======================================================
 
 29 November 2023
+
+Master thesis summary – Alexander Drent
+
+
 
 Introduction 
 =============
