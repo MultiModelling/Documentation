@@ -5,10 +5,7 @@ Scaling
 
 
 .. toctree::
-   :maxdepth: 1
-   :caption: Contents:
+   :maxdepth: 3
 
-   Scaling_analysis_multi-model_Bram-Boereboom_v0.1
+   Scaling_analysis_multi-model_Bram-Boereboom
 
-
-Text
