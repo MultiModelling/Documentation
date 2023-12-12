@@ -12,9 +12,10 @@ Examples of questions include whether the model is a token or type model. The ex
 
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 4
    :caption: Contents:
 
    test_1
    General_Information
+   Introduction_Model-Description
 
