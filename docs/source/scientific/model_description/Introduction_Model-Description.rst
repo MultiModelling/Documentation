@@ -1,9 +1,9 @@
 =============
 Introduction
 =============
----------------------------------------------------------
-Somadutta Sahoo, Last update: 11\ :sup:`th` November 2023
----------------------------------------------------------
+
+**Somadutta Sahoo, Last update: 11\ :sup:`th` November 2023**
+
 
 
 The model description template was created to compare models under
