@@ -18,9 +18,9 @@ The template is categorized into the first level, second level,
 questions to ask, answers, and additional comments. The first category
 was further subdivided into:
 
--  General model information
+-  `General model information`
 
--  Model content
+-  `Model content`
 
 Within general information, further subcategories or the second level
 are basic information, model versions, type or token model, intended
