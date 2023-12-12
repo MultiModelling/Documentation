@@ -6,7 +6,15 @@ Exploratory modeling and analysis tool-based coupling
 
 Master thesis summary – Alexander Drent
 
+This work has been further categorized into the following: 
 
+- `Introduction`_
+
+- `State-of-the-art`_
+
+- `Method, results, and findings`_
+
+- `Conclusions and future work`_
 
 Introduction 
 =============
@@ -156,7 +164,7 @@ of heat). Sobol analysis was used to understand which uncertainties
 strongly impact different investment categories. The uncertainties
 related to the interface had a limited impact.
 
-Conclusions and future work: 
+Conclusions and future work 
 =============================
 
 The results showed that the EMA workbench can be used for uncertainty
