@@ -2,10 +2,16 @@
 Optimization and Simulation model coupling
 ===========================================
 
+5 December 2023
+
 Master thesis summary – Menghua Prisse
 
+This work has been further categorized into the following: 
+- `Introduction`_
+- `State-of-the-art`_
+- `Methods, results, and findings`_
+- `Conclusion and future work`_
 
-5 December 2023
 
 Introduction
 ============
