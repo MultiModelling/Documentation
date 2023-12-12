@@ -1,6 +1,3 @@
-Model operational principles 
-===============================
+.. toctree::
 
-
-For example, to reference the previous section
-you can use `Explicit targets`_.
+   Operating-principles_multi_model
