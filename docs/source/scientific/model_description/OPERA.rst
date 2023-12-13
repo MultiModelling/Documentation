@@ -4,7 +4,7 @@ OPERA
 
 
 OPERA is a Dutch-based national energy system model focusing on total
-system cost minimization. Refer to :ref:`OPERA<source/energy_models/OPERA>` for more
+system cost minimization. Refer to `https://multimodelling.readthedocs.io/en/latest/energy_models/OPERA/index.html`_ for more
 overall information regarding the model.
 
 General model information
