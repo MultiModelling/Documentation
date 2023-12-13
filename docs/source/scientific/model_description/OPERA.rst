@@ -169,7 +169,7 @@ below for further discussion on these aspects.
 |                            | or processes) are set by expert         |
 |                            | consultation.                           |
 +----------------------------+-----------------------------------------+
-| What are the important     | 1. perfect foresight assumption         |
+| What are the important     | 1. Perfect foresight assumption         |
 | limitations of the         |                                         |
 |                            | 2. Social interaction and impacts       |
 | model?                     | missing                                 |
@@ -445,7 +445,7 @@ of the data are from open sources.
 |                             | electricity network, for others, all   |
 |                             | the investments start                  |
 |                             |                                        |
-|                             | from the scratch, for instance, medium |
+|                             | from scratch, for instance, medium     |
 |                             | voltage electricity                    |
 |                             |                                        |
 |                             | network                                |
