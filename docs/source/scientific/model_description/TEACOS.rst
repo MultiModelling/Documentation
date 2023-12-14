@@ -155,7 +155,7 @@ permission. The model is static, deterministic, and linear programming
 | complete?                |                                           |
 +--------------------------+-------------------------------------------+
 | Is the documentation     | Some parts of it are accessible through   |
-| accessible?              | the DNV-GL website                        |
+| accessible?              | the QUOMARE website                       |
 |                          |                                           |
 | If so, how?              | and this project.                         |
 +--------------------------+-------------------------------------------+
