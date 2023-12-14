@@ -503,4 +503,4 @@ Model Description:
 
 -  https://www.dnvgl.com/services/energy-transition-simulator-138088
 
--  *https://etrm.nl/*
+-  https://etrm.nl/
