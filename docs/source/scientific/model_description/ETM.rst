@@ -3,8 +3,7 @@ ETM
 ===
 
 
-OPERA is a Dutch-based national energy system model focusing on total
-system cost minimization. Refer to
+ETM is a Dutch-based national energy system model focusing on energy transition. Refer to
 https://multimodelling.readthedocs.io/en/latest/energy_models/ETM/index.html
 for more overall information regarding the model.
 
