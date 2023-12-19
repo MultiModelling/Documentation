@@ -8,6 +8,7 @@ Model description template
 
    Introduction_Model-Description
    CTM
+   ESSIM
    ETM
    MOTER
    OPERA
