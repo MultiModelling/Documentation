@@ -1,4 +1,4 @@
-Meso use case - National infrastructure
+Macro use case - National infrastructure
 ====================
 
 1.    Introduction
