@@ -19,8 +19,8 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'Multimodelling'
-copyright = '2023, Edwin Matthijssen, Ewoud Werkman'
-author = 'Edwin Matthijssen, Ewoud Werkman'
+copyright = '2023, Edwin Matthijssen, Ewoud Werkman, Serkan Keskin'
+author = 'Edwin Matthijssen, Ewoud Werkman, Serkan Keskin'
 
 
 # -- General configuration ---------------------------------------------------
