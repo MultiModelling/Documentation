@@ -15,7 +15,7 @@ Airflow DAGs are defined in Python language. These are regular ``.py`` files and
 These DAGs must contain the definitions of the **task**s that will run consecutively.
 A task can be created with the ``Operator`` classes of Airflow.
 
-Example use-cases use ``PythonOperator``s for most of their tasks, which they are generic for this project.
+Example use-cases use ``PythonOperator`` s for most of their tasks, which they are generic for this project.
 These operators are ``subroutine_initialize``, ``subroutine_computation`` and ``subroutine_finalize``.
 
 A task that uses ``subroutine_initialize`` operator has to be created. In the examples, it is named as ``Initialize``.
