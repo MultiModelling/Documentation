@@ -1,11 +1,11 @@
 Macro use case - National infrastructure
-====================
+========================================
 
 1.    Introduction
-----------------------------
+------------------
  
 1.1.	Use case description
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 Currently models from TSO’s/DSO’s in combination with the ETM are used to determine the impact of energy transition scenario’s on the energy infrastructure. 
 
 However, these scenarios/models have their limitations with regards to: 
@@ -24,7 +24,7 @@ This gives stakeholders, such as TSO’s and DSO’s, more insight into the futu
 
 
 1.2.	Models used 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 By making the following additions to the existing model structure (models TSO/DSO & ETM) we can: 
 
@@ -37,7 +37,7 @@ By making the following additions to the existing model structure (models TSO/DS
 * Optimize asset dispatch and dimensions (incl. network calculations) (Moter) 
 
 1.2.1. Opera
-+++++++++++++++++++++++++++++
+++++++++++++
 
 OPERA is a technology-rich energy system optimisation model for the Netherlands. Two features that make OPERA especially useful for developing sustainable energy scenarios for the Netherlands are: (1) it covers the complete energy system of the Netherlands and reflects all domestic emissions and types of greenhouse gases; (2) it simulates energy supply and demand, distinguishing different hour series with comparable supply and demand. These features permit the investigation of how to optimally deploy large capacities of intermittent renewable energy, among other things. 
 
@@ -62,14 +62,14 @@ Taxes, levies (e.g. CO2 price) and subsidies are not taken into account. Total s
   :alt: Figure 1 Example Opera output, showing the primary energy supply by energy source in the ADAPT scenario for 2030, 2040, 2050
 
 1.2.2. Energy transition model (ETM)
-+++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++
 
 The Energy Transition Model (ETM) is an online model which enables users to explore possible future for a specific energy system. The model is open-access, open source, web-based and interactive in its use. Through the use of sliders users can make explicit assumptions and choices about the future of their energy system based on its current situation. Currently the ETM models EU-countries and most Dutch provinces, municipalities and RES-regions. Open data is used to model these different energy systems. 
 
 The ETM is a bottom-up, simulation model. All relevant processes and energy flows are captured in a graph structure which describes all possible routes for exchanging energy between sectors and processes. All relevant sectors and energy carriers of the energy systems are also included. The ETM calculates the yearly energy balance for all energy carriers, and the hourly energy balance for electricity, heat, and hydrogen. The model is run two times, once for a start year and once for every hour of the selected future year. Based on (new) slider settings the model is rerun and supply and demand is automatically balanced on an hourly basis using a merit-module. The results include system KIP’s such as total costs and CO2 emission reduction of the modelled energy system. 
 
 1.2.3. Moter
-+++++++++++++++++++++++++++++
+++++++++++++
 
 *Introduction*
 MOTER is an optimization tool for the dispatch of “multi-commodity” energy systems consisting of interconnected electricity, natural gas, hydrogen and heat networks. MOTER was developed in the period 2015-2020 DNV as the calculation engine for the DNV “Energy Transition Simulator” (ETS). The ETS allows for 10-15 participants in a workshop setting to explore decarbonization pathways, from 2020 to 2050, for a simple fictive world (“Enerland”), but with real world techno-economic physics and price models. As the physics engine, MOTER dispatches all production, end use, transport, conversion and storage assets of Enerland energy system at lowest overall cost. The objective of MOTER within the Multi-Model macro case is to add network dispatch and in particular network congestion management to a national “II3050-Mobility” case.
@@ -124,7 +124,7 @@ Note that when using “global optimization”, special care has been taken is t
   :alt: Example of defining the time slices that serve as “proxies” for the reconstruction of full year dynamics.
 
 1.3.	Conceptual framework
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 *Introduction Macro Energy Modelling*
 Transforming a centralized fossil based energy system into a decentralized renewable energy system impact is one of the greatest challenges for our modern society. Essential to the success of this process is the availability of energy models that can guide to the stakeholders what the impact of their investment/ divestment decisions will be on future energy system.
@@ -201,10 +201,10 @@ In the next section we will go in to more detail on how ETM, Opera, MOTER, Regio
 
 
 2.    Approach
-----------------------------
+--------------
  
 2.1.	Model chain
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 The model chain represents the flow of data from one model to another. In this case ESDL was mainly used to exchange information between models. Most of the data-exchange is automatically performed by the orchestrator, however, the initialization still requires manual work. Information is exchanged as follows:
 
@@ -245,10 +245,10 @@ The regionalized energy system still only consists of a ‘list’ of assets wit
 Using all information added to the energy system in previous steps, Moter can now perform calculations to optimize the infrastructure and assets attached. Based on the optimization, Moter can give feedback e.g. on the amount of full load hours or max-capacity of assets. 
 
 2.2.	Individual model developments
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 2.2.1. Orchestrating AIMMS based models
-+++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++
 
 In this multi-modelling project three models are used that use AIMMS  as modelling and optimization environment: Opera, Moter (both in the macro use case) and Teacos (micro and meso use case). While Teacos already moved to AIMMS’ newer cloud environment, Opera and Moter have been developed in an Windows-based AIMMS application, using older versions of AIMMS. This lead to the challenge on how to orchestrate these models and exchange information with the AIMMS environment.
 The chosen approach was to wrap the AIMMS executable in a Python application that calls AIMMS using the command line and issue specific command line arguments to load the correct model and start the right AIMMS procedure to run the specific model. Before running the model, the input of the model should be configured based on the input ESDL and after running the model, information should be extracted from the model output and converted back into ESDL.
@@ -259,7 +259,7 @@ For those conversions two approaches were developed:
 	2. OperaLink – this Python module directly writes the input ESDL into Opera specific tables in its Access database. This approach was chosen as the impact of the UniversalLink was too high for the Opera model, as specific AIMMS knowledge was lacking for this integration into Opera. The OperaLink approach is therefore less generic, but was needed to have Opera part of the multi-model. Similar to the UniversalLink, the Python module processes the (specific) output of Opera and converts this back into ESDL.
 
 2.2.2. Opera
-+++++++++++++++++++++++++++++
+++++++++++++
 
 As discussed in the ‘Orchestrating AIMMS based models’ section, Opera uses the OperaLink approach to integrate with ESDL and uses a Python wrapper to start the Opera AIMMS model. All this functionality is added to the Opera Adapter that contains a webservice that is used by the Orchestrator to operate models in a multi model.
 
@@ -292,7 +292,7 @@ This output (in ESDL) is subsequently fed to the regionalization and connect inf
 
 
 2.2.3. Moter
-+++++++++++++++++++++++++++++
+++++++++++++
 
 For the MultiModel project a special version of MOTER was created that is ESDL compatible and can be controlled via an adapter. The MultiModel MOTER operates as follows:
 
@@ -315,7 +315,7 @@ All steps can also be performed automatically or manually for testing purposes a
   :alt: MOTER GUI sections: A) AIMMS page selection, B) CPLEX information C) manual MMviB control, D) ESDL (mySQL) server/ database testing,  E) testing the MOTER case in the local (MsAccess) database, F) configuring the optimization settings G) MOTER information box, H list of transports not converted from ESDL to MOTER.
 
 2.2.4. ETM
-+++++++++++++++++++++++++++++
+++++++++++
 
 The ETM translates scenario results into ESDL using the ETM-ESDL app. This app is accessible through an online interface (https://esdl.energytransitionmodel.com/api/v1/ or https://beta-esdl.energytransitionmodel.com/api/v1/ ). The app can currently perform 4 actions:
 1. Create a scenario: Generate an ETM-scenario based on an ESDL-file 
@@ -331,7 +331,7 @@ In the macro use-case the ETM-ESDL app uses the ‘create a scenario’ function
 
 
 2.3. 	Multi-model infrastructure and configuration (orchestrator)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The figure below shows the workflow of this use case in  the orchestrator (Apache AirFlow):
 
@@ -376,10 +376,10 @@ Apache airflow also allows you to see how long each task takes when executing a 
 
 
 3.    Results
-----------------------------
+-------------
 
 3.1.	Overview results orchestrator
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 As the starting point of the macro use case, a simplified national model is created in the ESDL MapEditor. The visualisation is shown below:
 
@@ -442,7 +442,7 @@ It shows two carriers: electricity (green) and hydrogen (orange). When running t
 After the infrastructure is connected to the regionalized assets Moter can be run as a next step in the Workflow. The output of the Moter ESDL is similar to the left figure, but with optimized infrastructure which is not visualized in the MapEditor. For the actual results of the run see the next chapter about Moter.
 
 3.2.	Results Moter
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 In order for MOTER  to be able to process the optimized, regionalized ESDL, the following modifications were made: 
 
@@ -546,10 +546,10 @@ The missing links to establish balance between supply and demand are the hydroge
 
 
 4.    Conclusions and recommendations
-----------------------------
+-------------------------------------
 
 4.1.	Lessons learned
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 * Arguably the biggest benefit of the Multi-Model approach is the approach enables model developers to work together at all. Models like ETM, Opera, MOTER have a long development history, are highly complex and can now only be worked by original developers. This if they are still available or successors are comfortable in meddling with the original code. Any attempt to integrate any two mature models would require developers from both sides to spend significant amounts of time, which they do not have, to understand how their own model and the other model works, before even considering an approach to add functionality to the models without breaking them. This provided that the models involved are fully open source and do not contain special approaches or proprietary information that developers may be reluctant to share with competitors. So basically, any conventional form of model integration will be very challenging under current real world commercial conditions. In the MultiModel approach, the main effort is to adapt models to read/ write ESDL and equipped with an adapter and the developers can then focus purely on their own model and focus all integration efforts on resolving ESDL input/output issues. This greatly facilitates the creative process and open communication and gives all parties involved a way forward in taken models to the next level.
 
 * MOTER was able to optimize a ~400 asset system, using 200 time slices within ~45 seconds using 2 GB of RAM. The challenge for MOTER as the number of assets in the future will increase lies in memory management, as LP optimization benefits less from multiple CPU cores.  
@@ -568,7 +568,7 @@ The missing links to establish balance between supply and demand are the hydroge
 	* There is a lot of IT involved in getting a multi-model working and that knowledge was not always available or lost when people left the project. It is therefore important that multiple people work together and share the knowledge they gained.
 
 4.2.	Reccomendations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 Arguably the biggest benefit of the Multi-Model approach is that the approach enables model developers to work together at all. Models like ETM, Opera, MOTER have a long development history, are highly complex and can now only be worked by original developers. This if they are still available or their successors are comfortable enough in changing the original code. Any attempt to integrate any two mature models would require experienced developers from both sides to spend significant amounts of time to understand how their own model and the other model works. This all before even considering an approach to add functionality to the models without breaking them. This all provided that the models involved are fully open source and do not contain proprietary information that developers may be reluctant to share with competitors. So given all these preconditions, any conventional form of model integration will be very challenging and it is not a stretch top claim that established models will hit dead ends in their development. 
 

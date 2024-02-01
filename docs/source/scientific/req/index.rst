@@ -50,7 +50,7 @@ document.
  `5. Model experimentation and output`_
 
 1. Infrastructure deployment
-=========================
+============================
 
 This category addresses the issues to avoid or reduce vendor- or other
 types of lock-in.
@@ -70,7 +70,7 @@ types of lock-in.
 +-----+---------------------------+-----------+-----------------------+
 
 2. Model description and alignment
-===============================
+==================================
 
 This category addresses prerequisites for multi-model connection: what
 the models need to adhere to and what the MMI need to provide to allow
@@ -136,7 +136,7 @@ model participation.
 +-----+---------------------------+-----------+-----------------------+
 
 3. Model connection and multi-model set-up
-=======================================
+==========================================
 
 This category addresses how to connect individual models and to set up a
 multi-model
@@ -212,7 +212,7 @@ multi-model
 
 
 4. Model interoperation
-=======================================
+=======================
 
 This category addresses what is needed for model interoperation (i.e. interaction) after a multi-model is set up 
 
@@ -265,7 +265,7 @@ This category addresses what is needed for model interoperation (i.e. interactio
 +------+-----------------------+--------------+-----------------------+
 
 5. Model experimentation and output 
-================================
+===================================
 
 This category addresses what is needed for model interoperation (i.e.
 interaction) after a multi-model is set up
