@@ -914,7 +914,7 @@ the group, helps a lot to move things forward.
    `Coupling for multi-models \| TU Delft
    Repositories <https://repository.tudelft.nl/islandora/object/uuid:53acc329-7990-4fe0-8374-3418d10c3f85>`__
 
-.. |image1| image:: images/image1.svg
+.. |image1| image:: images/image1.png
    :width: 6.25in
    :height: 3.28619in
 .. |image2| image:: images/image2.png
