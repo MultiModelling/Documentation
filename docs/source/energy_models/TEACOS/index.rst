@@ -1,4 +1,4 @@
-TEACOS
+TEACOS (Techno-Economic Analysis Of Complex Option Spaces)
 ======
 
 TEACOS is a mathematical optimization tool for mid- to long-term strategic investment analysis. The tool is
