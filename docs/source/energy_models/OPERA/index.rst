@@ -1,4 +1,4 @@
-OPERA
+OPERA (Option Portfolio for Emissions Reduction Assessment)
 =====
 
 OPERA is an optimization model based on linear programming. It represents the entire energy system of the Netherlands,
