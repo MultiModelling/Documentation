@@ -1,4 +1,4 @@
-Energy Potential Scan (EPS)
+EPS (Energy Potential Scan )
 ===========================
 
 The Energy Potential Scan for Business Parks (EPS) gives a first order estimate for the business case for
