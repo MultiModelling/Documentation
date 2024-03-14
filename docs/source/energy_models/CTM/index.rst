@@ -1,4 +1,4 @@
-Carbon Transition Model (CTM)
+CTM (Carbon Transition Model)
 =============================
 
 The Carbon Transition Model (CTM) is a tool to explore pathways to zero emissions for the Dutch industry as
