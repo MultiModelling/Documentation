@@ -276,7 +276,7 @@ that influence the acquisition of optional assets in an abstract manner,
 considering financial (i.e., costs and ROI) and social factors (i.e.,
 how agents are influenced by each other). The decisions made by the
 agents are written back into the ESDL-file. The results of the ABM are
-presented in the thesis Coupling for multi-models [2]_.
+presented in the thesis Coupling for multi-models [1]_.
 
 | **ESDL**
 | The Energy System Description Language (ESDL) is a standardized
@@ -721,10 +721,10 @@ the orchestrator environment due to the earlier mentioned problem we
 already had with getting the single time period model running there.
 
 4. Conclusions and lessons learned
-==================================
+---------------
 
 Conclusions
------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **The micro use case multi model works!**
 
@@ -766,7 +766,7 @@ management and maintenance for the orchestrator should be set up, and
 its usability should be matched with (potential) user requirements.
 
 Lessons Learned
----------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Pioneering on building a (micro use case) multi-model provided us with
 valuable lessons learned, which can be used in helping follow-up
@@ -907,10 +907,6 @@ does have a less significant impact for other parties to continue.
 the group, helps a lot to move things forward.
 
 .. [1]
-   `Coupling for multi-models \| TU Delft
-   Repositories <https://repository.tudelft.nl/islandora/object/uuid:53acc329-7990-4fe0-8374-3418d10c3f85>`__
-
-.. [2]
    `Coupling for multi-models \| TU Delft
    Repositories <https://repository.tudelft.nl/islandora/object/uuid:53acc329-7990-4fe0-8374-3418d10c3f85>`__
 
