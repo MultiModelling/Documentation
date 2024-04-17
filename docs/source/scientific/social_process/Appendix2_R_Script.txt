@@ -1,0 +1,488 @@
+---
+author: "Annemiek de Looze & Sander ten Caat"
+title: "Plots of the surveys for the MMvIB project"
+date: "04-02-2022"
+output: html_document
+runtime : shiny
+---
+
+Below you see four options:
+
+1. Survey results per question for each individual participant over time
+2. Results for each meeting
+3. Results for each question as answered by the entire group of respondents
+4. Results per question split between Group A and B (see the paper "Social 
+learning in participatory multi-modelling: Crossing boundaries for multi-party 
+collaboration" by ten Caat & de Looze (2022) for further explanation)
+
+For each of the questions, **the most positive answer is awarded a 1**.
+This means that a **5 is the most negative answer to a question**.
+
+Clicking the green download button allows you to save a HTML file of the plot.
+Opening it in your browser allows you to more easily change the width and height
+of the plot and then save it to your computer.
+
+```{r Enter files, echo=FALSE}
+# Enter the filenames of both the CSV files from Qualtrics below
+# Either enter the full path to the file or make sure the file is located
+# in your working directory.
+
+# Opening survey
+Opening <- read.csv("./Opening_survey_2021-12-02.csv")
+
+# Exit survey
+Exit <- read.csv("./Exit_survey_2021-12-02.csv")
+
+# Change names of group members here (see report for explanation on the groups)
+GroupA <- list("Arjen Jongepier", "Martijn Duvoort", "Jan Willem Turkstra", 
+               "Karel Zwetsloot", "Yilin Huang", "Gregor Brandt", 
+               "Mathijs Stelwagen", "Martin Scheepers", "Marten van der Laan")
+GroupB <- list("Bobby Boomkamp", "Gustav Nyberg", "Michel Emde", 
+               "Jarig Steringa", "Chael Kruip", "Roos de Kok", 
+               "Edwin Matthijssen", "Lotte van Vlimmeren")
+```
+
+
+```{r Setup, include=FALSE}
+# Install the packages below if necessary
+
+# install.packages("tidyr")
+# install.packages("ggplot2")
+# install.packages("stringr")
+# install.packages("data.table")
+# install.packages("plotly")
+# install.packages("manipulateWidget")
+# install.packages("shiny")
+
+# Packages for the violin plots
+library(tidyr)
+library(ggplot2)
+library(stringr)
+
+# We need data.table for the %like% function, to ignore spelling mistakes 
+# in names and to combine data from people who filled in the survey together
+library(data.table)
+
+# For interactive plots that can be saved to your PC
+library(plotly)
+library(manipulateWidget)
+
+# To create the interactive document
+library(shiny)
+```
+
+```{r Removing unnecessary data, echo = FALSE, warning = FALSE}
+# Deleting unnecessary rows and columns of metadata
+SelectOpening <- Opening[-c(2), c(24:44, 1)]
+SelectExit <- Exit[-c(2), c(23:52, 1)]
+
+# Setting the question text as headers
+header.true <- function(df) {
+  names(df) <- as.character(unlist(df[1,]))
+  df[-1,]
+}
+
+HeaderExit <- header.true(SelectExit)
+HeaderOpening <- header.true(SelectOpening)
+
+# Colour scheme for project
+# This matches colours (questions) in both data sets.
+cols <- c('#a6cee3','#1f78b4','#b2df8a','#33a02c','#fb9a99','#e31a1c',
+          '#fdbf6f','#ff7f00','#cab2d6')
+colsloopexit <- cols[c(8, 9, 3, 4, 7, 5, 6, 1, 2)] # Reordered for the exit survey plot loop.
+colsloopopening <- cols[c(8, 9, 3, 7, 2, 5, 6)] # Reordered for the opening survey plot loop.
+
+# Removing time from the Start Date
+HeaderExit$`Start Date` <- substr(HeaderExit$`Start Date`, 1, 10)
+HeaderOpening$`Start Date` <- substr(HeaderOpening$`Start Date`, 1, 10)
+
+# Combining English and Dutch answers for the opening survey
+CombiOpening <- data.frame(matrix(ncol = 0, nrow = nrow(HeaderOpening)))
+CombiOpening$"1. I expect that today's meeting will be useful for the progress of this project" <- 
+  as.integer(paste(HeaderOpening[, 2], HeaderOpening[, 13], sep = ""))
+CombiOpening$"2. I expect I will be able to meaningfully contribute to today's discussions" <- 
+  as.integer(paste(HeaderOpening[, 3], HeaderOpening[, 14], sep = ""))
+CombiOpening$"3. I expect to learn a lot from today's meeting" <- 
+  as.integer(paste(HeaderOpening[, 4], HeaderOpening[, 15], sep = ""))
+CombiOpening$"4. I feel prepared for this meeting" <- 
+  as.integer(paste(HeaderOpening[, 5], HeaderOpening[, 16], sep = ""))
+CombiOpening$"5. I know what is expected of me today" <- 
+  as.integer(paste(HeaderOpening[, 6], HeaderOpening[, 17], sep = ""))
+CombiOpening$"6. To what extent do you think that participants will agree when discussing today's topics?" <- 
+  as.integer(paste(HeaderOpening[, 7], HeaderOpening[, 18], sep = ""))
+CombiOpening$"7. To what extent do you think that the participants' goals within the MMvIB project are similar?" <- 
+  as.integer(paste(HeaderOpening[, 8], HeaderOpening[, 19], sep = ""))
+for (h in 1:ncol(CombiOpening)) { 
+  for (i in 1:nrow(CombiOpening)) {
+    if (CombiOpening[i, h] > 5) CombiOpening[i, h] <- CombiOpening[i, h] - 5
+  }
+}
+CombiOpening$Name <- paste(HeaderOpening[, 1], HeaderOpening[, 12], sep = "")
+CombiOpening$StartDate <- HeaderOpening$`Start Date`
+OpeningDates <- unique(CombiOpening$StartDate)
+for (k in 1:nrow(CombiOpening)) {
+  for (j in 1:length(OpeningDates)) {
+    if (CombiOpening$StartDate[k] == OpeningDates[j])
+      CombiOpening$MeetingNumber[k] <- paste("Meeting", j + 3)
+    }
+}
+for (j in 1:nrow(CombiOpening)) {
+  for (i in 1:length(GroupA)) {
+  if (CombiOpening$Name[j] %ilike% GroupA[i]) {
+    CombiOpening$Group[j] <- paste("A")
+    }
+  if (CombiOpening$Name[j] %ilike% GroupB[i]) {
+    CombiOpening$Group[j] <- paste("B")
+  }
+}
+}
+
+LongOpening <- melt(setDT(CombiOpening), id.vars = c("Name", "StartDate", 
+                                                     "MeetingNumber", "Group"), 
+                    value = "Score")
+
+# Combining English and Dutch answers for the exit survey
+CombiExit <- data.frame(matrix(ncol = 0, nrow = nrow(HeaderExit)))
+CombiExit$"1. This meeting was useful for me" <- 
+  as.integer(paste(HeaderExit[, 2], HeaderExit[, 17], sep = ""))
+CombiExit$"2. My participation was useful for others" <- 
+  as.integer(paste(HeaderExit[, 3], HeaderExit[, 18], sep = ""))
+CombiExit$"3. I learned a lot from this meeting" <- 
+  as.integer(paste(HeaderExit[, 4], HeaderExit[, 19], sep = ""))
+CombiExit$"4. What did you think of the setup of this meeting?" <- 
+  as.integer(paste(HeaderExit[, 7], HeaderExit[, 22], sep = ""))
+CombiExit$"5. This meeting focused on the right subjects" <- 
+  as.integer(paste(HeaderExit[, 10], HeaderExit[, 25], sep = ""))
+CombiExit$"6. To what extent do you think that all of the participants would describe the project in a similar way?" <- 
+  as.integer(paste(HeaderExit[, 11], HeaderExit[, 26], sep = ""))
+CombiExit$"7. To what extent do you think that the participants' goals within this project are similar?" <- 
+  as.integer(paste(HeaderExit[, 12], HeaderExit[, 27], sep = ""))
+CombiExit$"8. To what extent are the conclusions of this meeting clear to you?" <- 
+  as.integer(paste(HeaderExit[, 14], HeaderExit[, 29], sep = ""))
+CombiExit$"9. I know what is expected of me for the next meeting" <- 
+  as.integer(paste(HeaderExit[, 15], HeaderExit[, 30], sep = ""))
+for (h in 1:ncol(CombiExit)) {
+  for (i in 1:nrow(CombiExit)) {
+    if (CombiExit[i, h] > 5) CombiExit[i, h] <- CombiExit[i, h] - 5
+  }
+}
+CombiExit$Name <- paste(HeaderExit[, 1], HeaderExit[, 16], sep = "")
+CombiExit$StartDate <- HeaderExit$`Start Date`
+ExitDates <- unique(CombiExit$StartDate)
+for (k in 1:nrow(CombiExit)) {
+  for (j in 1:length(ExitDates)) {
+    if (CombiExit$StartDate[k] == ExitDates[j])
+      CombiExit$MeetingNumber[k] <- paste("Meeting", j + 2)
+    }
+}
+for (j in 1:nrow(CombiExit)) {
+  for (i in 1:length(GroupA)) {
+  if (CombiExit$Name[j] %ilike% GroupA[i]) {
+    CombiExit$Group[j] <- paste("A")
+    }
+  if (CombiExit$Name[j] %ilike% GroupB[i]) {
+    CombiExit$Group[j] <- paste("B")
+  }
+}
+}
+
+LongExit <- melt(setDT(CombiExit), id.vars = c("Name", "StartDate", 
+                                                     "MeetingNumber", "Group"), 
+                    value = "Score")
+
+# Tables to gather number of respondents
+tblOpen <- as.data.frame(table(CombiOpening$MeetingNumber))
+tblExit <- as.data.frame(table(CombiExit$MeetingNumber))
+```
+
+```{r Interactive plots, echo = FALSE}
+# Question per participant for the opening surveys
+IndiOpen <- function(Participant = "Yilin Huang", 
+                     Question = "1. I expect that today's meeting will be useful for the progress of this project") {
+  dataset <- LongOpening %>%
+    filter(Name %ilike% Participant, variable == Question)
+  dataset$FailSafe <- Participant
+
+  OpeningIndi <- ggplot(dataset, aes(MeetingNumber, group = FailSafe)) +
+    geom_line(aes(y = Score, color = Question)) +
+    geom_point(aes(y = Score, color = FailSafe)) +
+    scale_color_manual(values = c("red", "black")) +
+    ylim(c(5,1)) +
+    ggtitle(paste("Opening survey answered by", dataset$FailSafe)) +
+    xlab("") + ylab("Score") + labs(color = "") +
+    theme_bw() +
+    theme(plot.title = element_text(size=14)) +
+    theme(axis.title.y = element_text(size=12), 
+          axis.text.x = element_text(size=12))
+  
+  ggplotly(p = OpeningIndi) %>% 
+    layout(legend = list(orientation = "h", x = 0.1, y = -0.2))
+}
+
+# Question per participant for the exit surveys
+IndiExit <- function(Participant = "Yilin Huang", 
+                     Question = "1. This meeting was useful for me") {
+  dataset <- LongExit %>%
+    filter(Name %ilike% Participant, variable == Question)
+  dataset$FailSafe <- Participant
+
+  ExitIndi <- ggplot(dataset, aes(MeetingNumber, group = FailSafe)) +
+    geom_line(aes(y = Score, color = Question)) +
+    geom_point(aes(y = Score, color = FailSafe)) +
+    scale_color_manual(values = c("red", "black")) +
+    ylim(c(5,1)) +
+    ggtitle(paste("Exit survey answered by", dataset$FailSafe)) +
+    xlab("") + ylab("Score") + labs(color = "") +
+    theme_bw() +
+    theme(plot.title = element_text(size=14)) +
+    theme(axis.title.y = element_text(size=12), 
+          axis.text.x = element_text(size=12))
+  
+  ggplotly(p = ExitIndi) %>%
+    layout(legend = list(orientation = "h", x = 0.1, y = -0.2))
+}
+
+# Plot per meeting for the opening surveys
+OverallOpen <- function(Meeting = "Meeting 4") {
+  dataset <- LongOpening %>%
+    filter(MeetingNumber == Meeting)
+
+  OpenOverall <- ggplot(data = dataset, aes(x = variable, y = Score, 
+                                            fill = str_wrap(variable, 20))) +
+  geom_violin(alpha = 0.7) +
+  labs(title = paste("Opening survey for", dataset$MeetingNumber), 
+       y = "Score", x = paste("Respondents:", length(unique(dataset$Name)))) +
+  ylim(5.1, 0.9) +
+  scale_fill_manual(name = "Legend", guide = "legend", 
+                    values = cols[1:9]) +
+  theme(axis.text.x=element_blank(), axis.ticks.x=element_blank(), 
+        legend.text=element_text(size=11)) +
+    geom_point(position = position_jitter(width = 0.15, height = 0.08, 
+                                          seed = 30102021), alpha = 0.5, 
+               show.legend = FALSE)
+  
+  ggplotly(p = OpenOverall)
+    
+}
+
+# Plot per meeting for the exit surveys
+OverallExit <- function(Meeting = "Meeting 3") {
+  dataset <- LongExit %>%
+    filter(MeetingNumber == Meeting)
+
+  ExitOverall <- ggplot(data = dataset, aes(x = variable, y = Score, 
+                                            fill = str_wrap(variable, 20))) +
+  geom_violin(alpha = 0.7) +
+  labs(title = paste("Exit survey for", dataset$MeetingNumber), 
+       y = "Score", x = paste("Respondents:", length(unique(dataset$Name)))) +
+  ylim(5.1, 0.9) +
+  scale_fill_manual(name = "Legend", guide = "legend", 
+                    values = cols[1:9]) +
+  theme(axis.text.x=element_blank(), axis.ticks.x=element_blank(), 
+        legend.text=element_text(size=11)) +
+    geom_point(position = position_jitter(width = 0.15, height = 0.08, 
+                                          seed = 30102021), alpha = 0.5, 
+               show.legend = FALSE)
+  
+  ggplotly(p = ExitOverall)
+    
+}
+
+# Plot per question for the opening surveys
+QuestionOpen <- function(Question = "1. I expect that today's meeting will be useful for the progress of this project") {
+  dataset <- LongOpening %>%
+    filter(variable == Question)
+  
+  OpenQuestion <- ggplot(data = dataset, aes(x = MeetingNumber, y = Score)) +
+    geom_violin(alpha = 0.7, show.legend = FALSE) +
+    labs(title = paste0("Score for '", dataset$variable, "'"), y = "Score", 
+         x = "") +
+    ylim(5.1, 0.9) +
+    theme(axis.ticks.x=element_blank()) + 
+    geom_point(position = position_jitter(width = 0.15, height = 0.08, 
+                                          seed = 30102021), alpha = 0.5, 
+               show.legend = FALSE) +
+    geom_text(data = data.frame(), aes(x = tblOpen[, 1], y = 5, 
+                                       label = paste("Respondents:", 
+                                                     tblOpen[, 2])), 
+              size = 3.5, alpha = 0.8, show.legend = FALSE) +
+  stat_summary(fun = median, geom = "line", aes(group =1, colour = "Median"), 
+               linetype = 2) +
+  scale_colour_manual("", values = c("black", "red")) +
+  theme(plot.title = element_text(size=15)) +
+    theme(axis.title.y = element_text(size=12), 
+          axis.text.x = element_text(size=12))
+  
+  ggplotly(p = OpenQuestion) %>%
+    layout(legend = list(y = 0.5))
+
+}
+
+# Plot per question for the exit surveys
+QuestionExit <- function(Question = "1. This meeting was useful for me") {
+  dataset <- LongExit %>%
+    filter(variable == Question)
+  
+  ExitQuestion <- ggplot(data = dataset, aes(x = MeetingNumber, y = Score)) +
+    geom_violin(alpha = 0.7, show.legend = FALSE) +
+    labs(title = paste0("Score for '", dataset$variable, "'"), y = "Score", 
+         x = "") +
+    ylim(5.1, 0.9) +
+    theme(axis.ticks.x=element_blank()) + 
+    geom_point(position = position_jitter(width = 0.15, height = 0.08, 
+                                          seed = 30102021), alpha = 0.5, 
+               show.legend = FALSE) +
+    geom_text(data = data.frame(), aes(x = tblExit[, 1], y = 5, 
+                                       label = paste("Respondents:", 
+                                                     tblExit[, 2])), 
+              size = 3.5, alpha = 0.8, show.legend = FALSE) +
+  stat_summary(fun = median, geom = "line", aes(group =1, colour = "Median"), 
+               linetype = 2) +
+  scale_colour_manual("", values = c("black", "red")) +
+    theme(plot.title = element_text(size=15)) +
+    theme(axis.title.y = element_text(size=12), 
+          axis.text.x = element_text(size=12))
+  
+  ggplotly(p = ExitQuestion) %>%
+    layout(legend = list(y = 0.5))
+
+}
+
+# Plot per group for the opening surveys
+GroupOpening <- function(Question = "1. I expect that today's meeting will be useful for the progress of this project", 
+                         Meeting = "Meeting 4") {
+  dataset <- LongOpening %>%
+    filter(variable == Question, MeetingNumber == Meeting)
+  
+  OpeningGroup <- ggplot(data = dataset, aes(x = Group, y = Score, 
+                                             fill = Group)) +
+    geom_boxplot(alpha = 0.6) +
+    ylim(c(5,1)) +
+    labs(title = paste0("Group comparison for '", dataset$variable, "'"), 
+         y = "Score", 
+         x = "")
+
+ggplotly(p = OpeningGroup) %>%
+    layout(legend = list(y = 0.5))  
+}
+
+# Plot per group for the exit surveys
+GroupExit <- function(Question = "1. This meeting was useful for me", 
+                      Meeting = "Meeting 3") {
+  dataset <- LongExit %>%
+    filter(variable == Question, MeetingNumber == Meeting)
+  
+  ExitGroup <- ggplot(data = dataset, aes(x = Group, y = Score, fill = Group)) +
+    geom_boxplot(alpha = 0.6) +
+    ylim(c(5,1)) +
+    labs(title = paste0("Group comparison for '", dataset$variable, "'"), 
+         y = "Score", x = "")
+
+  ggplotly(p = ExitGroup) %>%
+    layout(legend = list(y = 0.5))
+  }
+```
+
+```{r Shiny, echo=FALSE}
+ui <- fluidPage(
+  tabsetPanel(
+    tabPanel("Individual Plots",
+    mwModuleUI("OpeningIndi"),
+    mwModuleUI("ExitIndi")
+  ),
+    tabPanel("Plots per meeting",
+    mwModuleUI("OpeningOverall", height = 800),
+    mwModuleUI("ExitOverall", height = 800)
+  ),
+    tabPanel("Plots per question",
+    mwModuleUI("OpeningQuestion", height = 800),
+    mwModuleUI("ExitQuestion", height = 800)
+  ),
+  tabPanel("Plots per group",
+    mwModuleUI("GroupOpenQ", height = 800),
+    mwModuleUI("GroupExitQ", height = 800)
+  )
+))
+
+server <- function(input, output, session) {
+  
+  IndiA <- manipulateWidget(
+    {
+      IndiOpen(Participant, Question)
+      },
+      Participant = mwSelect(sort(unique(LongOpening$Name)), "Yilin Huang"),
+      Question = mwSelect(sort(unique(LongOpening$variable))),
+    .runApp = FALSE
+  )
+  
+  IndiB <- manipulateWidget(
+    {
+      IndiExit(Participant, Question)
+      },
+      Participant = mwSelect(sort(unique(LongExit$Name)), "Yilin Huang"),
+      Question = mwSelect(sort(unique(LongExit$variable))),
+    .runApp = FALSE
+  )
+  
+  OverallA <- manipulateWidget(
+    {
+      OverallOpen(Meeting)
+      },
+    Meeting = mwSelect(sort(unique(LongOpening$MeetingNumber))),
+    .runApp = FALSE
+  )
+
+  OverallB <- manipulateWidget(
+    {
+      OverallExit(Meeting)
+      },
+    Meeting = mwSelect(sort(unique(LongExit$MeetingNumber))),
+    .runApp = FALSE
+  )
+  
+  QuestionA <- manipulateWidget(
+    {
+      QuestionOpen(Question)
+      },
+    Question = mwSelect(sort(unique(LongOpening$variable)), "Contribute"),
+    .runApp = FALSE
+  )
+
+  QuestionB <- manipulateWidget(
+    {
+      QuestionExit(Question)
+      },
+    Question = mwSelect(sort(unique(LongExit$variable)), "Learned"),
+    .runApp = FALSE
+  )
+  
+  GroupAInt <- manipulateWidget(
+    {
+      GroupOpening(Question, Meeting)
+    },
+    Question = mwSelect(sort(unique(LongOpening$variable))),
+    Meeting = mwSelect(sort(unique(LongOpening$MeetingNumber))),
+    .runApp = FALSE
+  )
+  
+  GroupBInt <- manipulateWidget(
+    {
+      GroupExit(Question, Meeting)
+    },
+    Question = mwSelect(sort(unique(LongExit$variable))),
+    Meeting = mwSelect(sort(unique(LongExit$MeetingNumber))),
+    .runApp = FALSE
+  )
+    
+   mwModule("OpeningIndi", IndiA)
+   mwModule("ExitIndi", IndiB)
+   mwModule("OpeningOverall", OverallA)
+   mwModule("ExitOverall", OverallB)
+   mwModule("OpeningQuestion", QuestionA)
+   mwModule("ExitQuestion", QuestionB)
+   mwModule("GroupOpenQ", GroupAInt)
+   mwModule("GroupExitQ", GroupBInt)
+  }
+
+shinyApp(ui, server, options = list(height = 1920, width = 1200))
+```
