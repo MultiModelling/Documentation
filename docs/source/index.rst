@@ -13,6 +13,7 @@ Welcome to the Multimodelling documentation
    technical/index
    installation/index
    terminology/index
+   General-tips_error-debugging/index
 
 
 Indices and tables
