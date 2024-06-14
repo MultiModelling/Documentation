@@ -87,13 +87,13 @@ Step 6 # Running a case
 you could see DAGs on your locahost screen. :ref:`Creating a use-case` acquints you with tasks, operators, etc. used in this project for different cases. 
 
 We focused on a sample case of ``etm_essim_demo``. For this, the following model adapters need to be running on your Docker environment: 
-|1. ESSIM
-|2. ETM-Price-Profile
-|3. ESDL-Add-Price-Profile
+1. ESSIM
+2. ETM-Price-Profile
+3. ESDL-Add-Price-Profile
 
 Apart from these, the following repository components need to also run on Docker:
-|1. Database-MinIO
-|2. Model-Registry
-|3. Model-Orchestrator
+1. Database-MinIO
+2. Model-Registry
+3. Model-Orchestrator
 
 (continue...)
