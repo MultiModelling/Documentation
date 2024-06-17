@@ -106,7 +106,7 @@ Apart from these, the following repository components need to also run on Docker
 
 :ref:`Running a use-case` provides basic information to familiarize with the Orchestrator, Apache-Airflow, interface. For the ``etm_essim_demo`` 
 DAG, the **Trigger DAG w/ config** shows a blank configuration JSON object. This needs to filled with etm_essim_demo.json data (copy-paste the 
-entire content). The current JSON file (present in the model repository) is giving errors. This was rectified and put here.  
+entire content). The current JSON file (present in the model repository) is giving errors. This was rectified and put :ref:`etm_essim_demo.json`.  
 
 
 (Optional) Alternative Step # Manual running or checking of adapters (without using Docker)
