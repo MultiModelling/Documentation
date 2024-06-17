@@ -112,7 +112,7 @@ entire content). The current JSON file (present in the model repository) is givi
 .. literalinclude:: ./etm_essim_demo.json
    :language: json
    :linenos:
-   :caption: Object description
+   :caption: etm_essim_demo.json
 
 
 (Optional) Alternative Step # Manual running or checking of adapters (without using Docker)
