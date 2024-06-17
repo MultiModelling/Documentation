@@ -9,4 +9,4 @@ End user documentation
    Running a use-case
    Creating a use-case
    Error-warning solving and debugging
-   Useful tips
+   Useful-tips
