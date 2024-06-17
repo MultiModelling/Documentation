@@ -11,7 +11,7 @@ Minio
 -----
 #. Docker run command for starting a `minio container <https://min.io/docs/minio/container/index.html>`_:
 
-.. code-block:: console
+.. code-block:: python
     
     docker run \
         -p 9000:9000 \
